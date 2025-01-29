@@ -2,14 +2,20 @@ import { useState } from 'react'
 import './App.css'
 
 const App = () => {
+  type AgeType = {
+    years: number | string;
+    months: number | string;
+    days: number | string;
+  };
+
   const [day, setDay] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
-  const [Age, setAge] = useState<{
-    years: number;
-    months: number;
-    days: number;
-  } | null>(null);
+  const [Age, setAge] = useState<AgeType>({
+    years: "--",
+    months: "--",
+    days: "--",
+  });
 
   const calculateAge = () => {
     if (!day || !month || !year) return;
@@ -59,21 +65,24 @@ const App = () => {
               className="w-1/3 p-3 border rounded-lg text-center text-lg"
             />
           </div>
-          <button
+          {/* <button
             onClick={calculateAge}
             className="bg-black text-white px-5 py-2 rounded-lg w-full hover:bg-gray-800"
           >
             Calculate Age
-          </button>
-          {Age && (
+          </button> */}
+          <div className="flex border">
+            <hr className="my-auto border-t-2 border-gray-300 w-full" />
+            <button onClick={calculateAge} className='bg-purple p-2 rounded-full flex justify-center items-center w-12 h-12 flex-none'>
+              <img src="/icon-arrow.svg" alt="Arrow Icon" className="w-6 h-6" />
+            </button>
+          </div>
             <div className="mt-6 text-center text-3xl font-bold">
-              <p className="text-purple-600">{Age.years} <span className="text-black">years</span></p>
-              <p className="text-purple-600">{Age.months} <span className="text-black">months</span></p>
-              <p className="text-purple-600">{Age.days} <span className="text-black">days</span></p>
+                <p className="text-purple">{Age.years} <span className="text-black">years</span></p>
+                <p className="text-purple">{Age.months} <span className="text-black">months</span></p>
+                <p className="text-purple">{Age.days} <span className="text-black">days</span></p>
             </div>
-          )}
         </div>
-        <h1 className='text-red'>App</h1>
       </div>
     </>
   )
