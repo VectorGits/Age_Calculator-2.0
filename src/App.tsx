@@ -67,10 +67,11 @@ const App = () => {
           </button>
           {Age && (
             <div className="mt-6 text-center text-3xl font-bold">
-              
+              <p className="text-purple-600">{Age.years} <span className="text-black">years</span></p>
+              <p className="text-purple-600">{Age.months} <span className="text-black">months</span></p>
+              <p className="text-purple-600">{Age.days} <span className="text-black">days</span></p>
             </div>
           )}
-          
         </div>
         <h1 className='text-red'>App</h1>
       </div>
