@@ -94,17 +94,17 @@ const App = () => {
   return (
     <>
       <div className='flex justify-center items-center min-h-screen bg-gray-100 p-4 border'>
-        <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-lg" style={{ borderBottomRightRadius: '120px' }}>
-          <div className="flex gap-3 mb-4 mr-16">
+        <div className="bg-white p-6 2xl:p-10 rounded-2xl shadow-lg w-full max-w-lg lg:max-w-2xl 2xl:max-w-3xl" style={{ borderBottomRightRadius: '120px' }}>
+          <div className="flex gap-3 mb-4 mr-16 lg:mr-28">
             {/* DAY */}
             <div className='flex-1'>
-              <p className={`font-semibold text-xs ${dayError ? 'text-lightRed' : 'text-smokeyGrey'}`}>DAY</p>
+              <p className={`font-semibold text-[10px] sm:text-xs md:text-md lg:text-lg ${dayError ? 'text-lightRed' : 'text-smokeyGrey'}`}>DAY</p>
               <input 
                 type="number"
                 placeholder='DD'
                 value={day}
                 onChange={(e) => setDay(e.target.value)}
-                className={`w-full p-3 border rounded-lg text-center text-lg font-semibold ${
+                className={`w-full p-3 border rounded-lg text-center text-sm md:text-lg font-semibold hover:border-purple hover:cursor-pointer ${
                   dayError ? 'border-lightRed' : ''
                 }`}
               />
@@ -112,13 +112,13 @@ const App = () => {
             </div>
             {/* MONTH */}
             <div className='flex-1'>
-              <p className={`font-semibold text-xs ${monthError ? 'text-lightRed' : 'text-smokeyGrey'}`}>MONTH</p>
+              <p className={`font-semibold text-[10px] sm:text-xs md:text-md lg:text-lg ${monthError ? 'text-lightRed' : 'text-smokeyGrey'}`}>MONTH</p>
               <input 
                 type="number"
                 placeholder='MM'
                 value={month}
                 onChange={(e) => setMonth(e.target.value)}
-                className={`w-full p-3 border rounded-lg text-center text-lg font-semibold ${
+                className={`w-full p-3 border rounded-lg text-center text-sm md:text-lg font-semibold hover:border-purple hover:cursor-pointer ${
                   monthError ? 'border-lightRed' : ''
                 }`}
               />
@@ -126,13 +126,13 @@ const App = () => {
             </div>
             {/* YEAR */}
             <div className='flex-1'>
-              <p className={`font-semibold text-xs ${yearError ? 'text-lightRed' : 'text-smokeyGrey'}`}>YEAR</p>
+              <p className={`font-semibold text-[10px] sm:text-xs md:text-md lg:text-lg ${yearError ? 'text-lightRed' : 'text-smokeyGrey'}`}>YEAR</p>
               <input 
                 type="number"
                 placeholder='YYYY'
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
-                className={`w-full p-3 border rounded-lg text-center text-lg font-semibold ${
+                className={`w-full p-3 border rounded-lg text-center text-sm md:text-lg font-semibold hover:border-purple hover:cursor-pointer ${
                   yearError ? 'border-lightRed' : ''
                 }`}
               />
@@ -146,14 +146,14 @@ const App = () => {
             Calculate Age
           </button> */}
           {/* Calculate Button */}
-          <div className="flex">
-            <hr className="my-auto border-t-2 border-gray-300 w-full" />
-            <button onClick={calculateAge} className='bg-purple p-2 rounded-full flex justify-center items-center w-12 h-12 flex-none'>
-              <img src="/icon-arrow.svg" alt="Arrow Icon" className="w-6 h-6" />
+          <div className="relative my-12 lg:my-16">
+            <hr className="border-t border-gray-300 w-full" />
+            <button onClick={calculateAge} className='bg-purple absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full p-2 md:p-3 lg:p-8 md:left-auto md:right-0 md:translate-x-0 hover:bg-black'>
+              <img src="/icon-arrow.svg" alt="Arrow Icon" className="w-6 h-6 md:w-10 md:h-10" />
             </button>
           </div>
             {/* RESULTS */}
-            <div className="mt-6 text-6xl font-extrabold">
+            <div className="mt-6 text-5xl font-extrabold sm:text-6xl lg:text-8xl 2xl:text-9xl">
                 <p className="text-purple">
                   {String(Age.years).padStart(2, "0")} <span className="text-black">{+Age.years > 1 ? 'years' : 'year'}</span>
                 </p>
