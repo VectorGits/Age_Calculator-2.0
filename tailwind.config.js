@@ -15,6 +15,9 @@ module.exports = {
         smokeyGrey: 'hsl(0, 1%, 44%)',
         offBlack: 'hsl(0, 0%, 8%)',
       },
+      fontSize: {
+        xxs: '0.625rem', // e.g., 10px
+      },
     },
   },
   plugins: [],
