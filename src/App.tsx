@@ -154,9 +154,15 @@ const App = () => {
           </div>
             {/* RESULTS */}
             <div className="mt-6 text-6xl font-extrabold">
-                <p className="text-purple">{Age.years} <span className="text-black">{+Age.years > 1 ? 'years' : 'year'}</span></p>
-                <p className="text-purple">{Age.months} <span className="text-black">{+Age.months > 1 ? 'months' : 'month'}</span></p>
-                <p className="text-purple">{Age.days} <span className="text-black">{+Age.days > 1 ? 'days' : 'day'}</span></p>
+                <p className="text-purple">
+                  {String(Age.years).padStart(2, "0")} <span className="text-black">{+Age.years > 1 ? 'years' : 'year'}</span>
+                </p>
+                <p className="text-purple">
+                  {String(Age.months).padStart(2, "0")} <span className="text-black">{+Age.months > 1 ? 'months' : 'month'}</span>
+                </p>
+                <p className="text-purple">
+                  {String(Age.days).padStart(2, "0")} <span className="text-black">{+Age.days > 1 ? 'days' : 'day'}</span>
+                </p>
             </div>
         </div>
       </div>
